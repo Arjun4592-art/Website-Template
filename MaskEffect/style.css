@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.5s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  -webkit-mask-image: linear-gradient(135deg, rgba(0, 0, 0, 1), transparent);
+  animation: maskImage 10s linear infinite;
+}
+
+header {
+  position: relative;
+}
+
+nav {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 100px;
+}
+
+.brand__logo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  text-transform: uppercase;
+  z-index: 1000;
+}
+
+.brand__logo ion-icon {
+  margin-right: 10px;
+  font-size: 30px;
+}
+
+.brand__logo span {
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+nav ul {
+  flex: 0.4;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  transition: 0.5s;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  height: 40px;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.8);
+  left: 50%;
+  top: -100px;
+  transition: top 0.5s;
+}
+
+nav ul li:hover {
+  transform: translateY(10px);
+}
+
+nav ul li a:hover::after {
+  top: -50px;
+}
+
+.social__icons {
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  color: #fff;
+}
+
+.social__icons ion-icon {
+  position: relative;
+  font-size: 20px;
+  margin: 5px;
+  cursor: pointer;
+  padding: 0 30px;
+}
+
+.social__icons ion-icon::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.8);
+  top: 50%;
+  left: -40px;
+  z-index: 100;
+}
+
+.icon__container {
+  position: relative;
+  /* transition-delay: 1s; */
+}
+
+.social__icons .icon__container span {
+  position: absolute;
+  top: 0;
+  left: 100px;
+  background: #fff;
+  color: #555;
+  padding: 5px 10px;
+  opacity: 0;
+  z-index: 10;
+  border-radius: 2px;
+}
+
+.social__icons .icon__container span::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  top: 50%;
+  left: -6px;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.icon__container:hover > span {
+  left: 80px;
+  opacity: 1;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  transform: translate(-5%, -5%);
+  text-transform: capitalize;
+  font-size: 16px;
+}
+
+.copyright a {
+  color: #555;
+  font-weight: 800;
+}
+
+.collapsible__btn {
+  display: none;
+}
+
+@media screen and (max-width: 780px) {
+  nav {
+    padding: 30px 50px;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  .collapsible__btn {
+    display: block;
+    font-size: 35px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  nav.active .brand__logo {
+    color: #555;
+  }
+
+  .collapsible__btn ion-icon:nth-child(2) {
+    display: none;
+  }
+
+  .collapsible__btn.active ion-icon:nth-child(2) {
+    color: #555;
+    display: block;
+  }
+
+  .collapsible__btn.active ion-icon:nth-child(1) {
+    display: none;
+  }
+
+  .collapsible__btn ion-icon:nth-child(1) {
+    display: block;
+  }
+
+  nav ul.vertical__navbar {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 80;
+    top: 0;
+    left: -100%;
+    background: #fff;
+  }
+
+  nav ul.vertical__navbar.active {
+    left: 0;
+  }
+
+  nav ul.vertical__navbar li {
+    display: block;
+    padding: 10px 20px;
+  }
+
+  nav ul.vertical__navbar li a {
+    color: #555;
+  }
+
+  nav ul.vertical__navbar li a::after {
+    width: 0;
+    height: 0;
+    background: none;
+  }
+
+  nav ul.vertical__navbar li:hover {
+    transform: translateX(30px);
+  }
+
+  .social__icons .icon__container,
+  .social__icons .icon__container span {
+    color: #fff;
+    cursor: none;
+  }
+}

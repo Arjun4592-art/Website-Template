@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website Template</title>
+  </head>
+  <body>
+    <header>
+      <nav id="navbar">
+        <a href="" class="brand__logo">
+          <ion-icon name="logo-electron"></ion-icon>
+          <span>Island</span>
+        </a>
+
+        <div class="collapsible__btn" id="btn">
+          <ion-icon name="menu-outline" style="z-index: 1000"></ion-icon>
+          <ion-icon name="close-outline"></ion-icon>
+        </div>
+
+        <ul class="navbar__nav vertical__navbar" id="navbar__nav">
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">Service</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Project</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="social__icons">
+        <div class="icon__container">
+          <ion-icon name="logo-facebook"></ion-icon>
+          <span>Facebook</span>
+        </div>
+        <div class="icon__container">
+          <ion-icon name="logo-instagram"></ion-icon>
+          <span>Instagram</span>
+        </div>
+        <div class="icon__container">
+          <ion-icon name="logo-github"></ion-icon>
+          <span>Github</span>
+        </div>
+        <div class="icon__container">
+          <ion-icon name="logo-twitter"></ion-icon>
+          <span>Twitter</span>
+        </div>
+        <div class="icon__container">
+          <ion-icon name="logo-linkedin"></ion-icon>
+          <span>Linkedin</span>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <video src="Pexels Videos 2169880.mp4" autoplay muted loop></video>
+    </div>
+
+    <div class="copyright">
+      © copyright - <a href="#">Arjun Prasad</a> - 2021
+    </div>
+
+    <script>
+      const Btn = document.getElementById('btn')
+      const Navbar = document.getElementById('navbar')
+      const NavbarNav = document.getElementById('navbar__nav')
+
+      Btn.addEventListener('click', () => {
+        Btn.classList.toggle('active')
+        Navbar.classList.toggle('active')
+        NavbarNav.classList.toggle('active')
+      })
+    </script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
